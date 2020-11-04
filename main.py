@@ -1,9 +1,11 @@
 import turtle
 from tkinter import *
+# creating tkinter window
 root = Tk()
 root.title("Menu")
 root.configure(bg='white')
 
+# clear command
 def clean():
     button_1["state"] = NORMAL
     button_2["state"] = NORMAL
@@ -15,7 +17,7 @@ def clean():
     while cleaning:
         turtle.reset()
     
-
+# 1st drawing
 def spiral():
     button_1["state"] = DISABLED
     button_2["state"] = DISABLED
@@ -53,6 +55,7 @@ def spiral():
     button_5["state"] = NORMAL
     turtle.clear()
 
+# 2nd drawing
 def diamond ():
     button_1["state"] = DISABLED
     button_2["state"] = DISABLED
@@ -79,6 +82,7 @@ def diamond ():
     button_4["state"] = NORMAL
     button_5["state"] = NORMAL
 
+# 3rd drawing
 def rainbow():
     button_1["state"] = DISABLED
     button_2["state"] = DISABLED
@@ -114,6 +118,7 @@ def rainbow():
     button_3["state"] = NORMAL
     button_4["state"] = NORMAL
     button_5["state"] = NORMAL
+# 4th drawing
 def semicircle():
     button_1["state"] = DISABLED
     button_2["state"] = DISABLED
@@ -136,6 +141,7 @@ def semicircle():
     button_4["state"] = NORMAL
     button_5["state"] = NORMAL
 
+# 5th drawing
 def semi():
     button_1["state"] = DISABLED
     button_2["state"] = DISABLED
@@ -157,16 +163,19 @@ def semi():
     button_4["state"] = NORMAL
     button_5["state"] = NORMAL
 
-# creating buttons
+# creating welcome button
 intro_label= Label(root, text= "Welcome", font=("arial", 80, "bold"), fg="#ff6600", bg="white")
 intro_label.grid(row= 0,column=0, columnspan=200)
 
+# main frame
 main_frame = LabelFrame(root, text = "choose any One Drawing", padx= 50, font=("arial", 40, "bold"), fg="#ff471a", bg="white")
 main_frame.grid(row=1, column=0, padx=5 ,pady=5 , ipadx=25, ipady= 140)
 
+# blank label
 blank_label=Label(main_frame, text="", bg="white")
 blank_label.grid(row=0, column=0)
 
+# creating options
 label_1 = Label(main_frame, text= "Circle Pattern: ", font=("helvetica", 20, "italic"), fg= "#33334d", bg="white")
 button_1 = Button(main_frame, text="Create" , command= spiral, state=NORMAL, relief="ridge", bg="white") 
 label_1.grid(row=1, column=0, padx=100)
@@ -192,14 +201,17 @@ button_5 = Button(main_frame, text="Create" , command= semi, state=NORMAL, relie
 label_5.grid(row=5, column=0)
 button_5.grid(row=5, column=1)
 
+# creating blank_labels
 blank_label=Label(main_frame, text="", bg="white")
 blank_label.grid(row=6, column=0)
 blank_label=Label(main_frame, text="", bg="white")
 blank_label.grid(row=7, column=0)
 
+# creating clear option
 clear_label=Label(main_frame, text="Clear : ", font=("helvetica", 60, "bold"), fg= "black", bg="white")
 clear_label.grid(row=8, column=0)
 clear_button = Button(main_frame, text= "Clear", relief="groove", command=clean, bg="white")
 clear_button.grid(row=8, column=1, ipadx=100, ipady= 25)
+# setting root as a mainloop
 root.mainloop()
 
